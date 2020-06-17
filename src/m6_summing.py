@@ -36,14 +36,14 @@ def run_test_sum_cosines():
     print('       actual:  ', answer)
 
     # Test 2:
-    expected =
-    answer = sum_cosines()
+    expected = 1
+    answer = sum_cosines(0)
     print('Test 2 expected:', expected)
     print('       actual:  ', answer)
 
     # Test 3:
-    expected =
-    answer = sum_cosines()
+    expected = -0.2358184626798337
+    answer = sum_cosines(5)
     print('Test 2 expected:', expected)
     print('       actual:  ', answer)
 
@@ -65,7 +65,11 @@ def sum_cosines(n):
     #   No fair running the code of  sum_cosines  to GENERATE
     #   test cases; that would defeat the purpose of TESTING!
     # ------------------------------------------------------------------
-
+    import math
+    sum = 0
+    for k in range(n+1):
+        sum = sum + math.cos(k)
+    return sum
 
 def run_test_sum_square_roots():
     """ Tests the   sum_square_roots   function. """
@@ -89,13 +93,13 @@ def run_test_sum_square_roots():
     print('       actual:  ', answer)
 
     # Test 2:
-    expected =
-    answer = sum_square_roots(3)
+    expected = 0
+    answer = sum_square_roots(0)
     print('Test 2 expected:', expected)
     print('       actual:  ', answer)
 
     # Test 3:
-    expected =
+    expected = 5.863703305156273
     answer = sum_square_roots(3)
     print('Test 2 expected:', expected)
     print('       actual:  ', answer)
@@ -121,7 +125,11 @@ def sum_square_roots(n):
     #   No fair running the code of  sum_square_roots  to GENERATE
     #   test cases; that would defeat the purpose of TESTING!
     # ------------------------------------------------------------------
-
+    import math
+    sum = 0
+    for k in range(n+1):
+        sum = sum + math.sqrt(2*k)
+    return sum
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
