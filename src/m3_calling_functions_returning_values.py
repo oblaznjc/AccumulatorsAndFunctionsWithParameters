@@ -31,7 +31,7 @@ def main():
     #       ** Ask a TA or your professor for help in that case. **
     # ------------------------------------------------------------------
 
-    # m3t_tester.main()
+    m3t_tester.main()
 
 
 def run_test_sum_of_digits():
@@ -183,7 +183,7 @@ def digits_in_cube(n):
       this function returns (1 + 2 + 5), which is 8.
     """
     cube = n ** 3
-    return digits_in_cube(cube)
+    return sum_of_digits(cube)
     # ------------------------------------------------------------------
     # DONE: 4. Implement and test this function.
     #   Note that you should write its TEST function first (above).
@@ -275,7 +275,7 @@ def run_test_fancy_sums_of_digits():
     # ------------------------------------------------------------------
 
     # Test 1:
-    expected = 2
+    expected = 1
     answer = fancy_sums_of_digits(10)
     print('Test 1 expected:', expected)
     print('       actual:  ', answer)
