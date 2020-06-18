@@ -13,7 +13,7 @@ def main():
     run_test_draw_circles()
     # Un-comment the next lines when you are ready to use them.
     # run_test_better_draw_circles()
-    # run_test_even_better_draw_circles()
+    run_test_even_better_draw_circles()
 
 
 # ----------------------------------------------------------------------
@@ -64,7 +64,7 @@ def draw_circles():
     window.close_on_mouse_click()
 
 # ----------------------------------------------------------------------
-# TODO: 2.
+# DONE: 2.
 #   First, RUN this program.  You will see that draw_circles draws
 #   concentric circles whose radii vary by 10.
 #
@@ -92,10 +92,39 @@ def draw_circles():
 #   run_test_draw_circles  may get you started more quickly on your new
 #   better_draw_circles  and  run_test_better_draw_circles.
 # ----------------------------------------------------------------------
+def run_test_better_draw_circles():
+    print()
+    print('--------------------------------------------------')
+    print('Testing  better_draw_circles(1):  See graphics window')
+    print('--------------------------------------------------')
+    better_draw_circles(1)
+
+    print()
+    print('--------------------------------------------------')
+    print('Testing  better_draw_circles(10):  See graphics window')
+    print('--------------------------------------------------')
+    better_draw_circles(10)
+
+    print()
+    print('--------------------------------------------------')
+    print('Testing  better_draw_circles(20):  See graphics window')
+    print('--------------------------------------------------')
+    better_draw_circles(20)
+
+def better_draw_circles(increase_radius):
+    window = rg.RoseWindow(400, 400)
+
+    center = rg.Point(200, 200)
+    for k in range(21):
+        circle = rg.Circle(center, increase_radius * k)
+        circle.attach_to(window)
+        window.render(0.05)  # Pauses for 0.05 seconds after rendering.
+
+    window.close_on_mouse_click()
 
 
 # ----------------------------------------------------------------------
-# TODO: 3.
+# DONE: 3.
 #   In the previous exercise, you made a MORE POWERFUL version
 #   of draw_circles by introducing a PARAMETER for the amount by
 #   which the radii of the concentric circles increase.
@@ -122,6 +151,37 @@ def draw_circles():
 #   In testing your even_better_draw_circles function,
 #   can you make some fun pictures?
 # ----------------------------------------------------------------------
+def run_test_even_better_draw_circles():
+    print()
+    print('--------------------------------------------------')
+    print('Testing  even_better_draw_circles(10, 1, 200, 200, "red", 0.05):  See graphics window')
+    print('--------------------------------------------------')
+    even_better_draw_circles(10, 1, 200, 200, "red", 0.05)
+
+    print()
+    print('--------------------------------------------------')
+    print('Testing  even_better_draw_circles(10, 12, 0, 0, "red", .5):  See graphics window')
+    print('--------------------------------------------------')
+    even_better_draw_circles(10, 12, 0, 0, "red", .5)
+
+    print()
+    print('--------------------------------------------------')
+    print('Testing  even_better_draw_circles(3, 100, 200, 200, "green", 0.01):  See graphics window')
+    print('--------------------------------------------------')
+    even_better_draw_circles(3, 100, 200, 200, "green", 0.01)
+
+def even_better_draw_circles(increase_radius, number_circles, center_x, center_y, outline_color, pause_length):
+    window = rg.RoseWindow(400, 400)
+
+    center = rg.Point(center_x, center_y)
+    for k in range(number_circles):
+        circle = rg.Circle(center, increase_radius * k)
+        circle.outline_color = outline_color
+        circle.attach_to(window)
+        window.render(pause_length)
+
+    window.close_on_mouse_click()
+
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
