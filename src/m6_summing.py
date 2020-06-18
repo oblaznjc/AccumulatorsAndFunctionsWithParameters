@@ -44,7 +44,7 @@ def run_test_sum_cosines():
     # Test 3:
     expected = -0.2358184626798337
     answer = sum_cosines(5)
-    print('Test 2 expected:', expected)
+    print('Test 3 expected:', expected)
     print('       actual:  ', answer)
 
 def sum_cosines(n):
@@ -101,7 +101,7 @@ def run_test_sum_square_roots():
     # Test 3:
     expected = 5.863703305156273
     answer = sum_square_roots(3)
-    print('Test 2 expected:', expected)
+    print('Test 3 expected:', expected)
     print('       actual:  ', answer)
 
 def sum_square_roots(n):
